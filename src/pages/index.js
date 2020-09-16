@@ -1,22 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
+import Tile from "../components/Tile/Tile"
+import { tilesData } from "../data/tiles"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+const HomePage = () => (
+  <div className="py-20 px-16 w-screen">
+    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4">
+    {tilesData.map(tile => <Tile {...tile} key={tile.title} />)}
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
+  </div>
 )
 
-export default IndexPage
+export default HomePage

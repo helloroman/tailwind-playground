@@ -1,0 +1,25 @@
+.tileBg {
+  position: relative;
+  overflow: hidden;
+  
+  &::before, &::after {
+    content: '';
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    border-radius: 400px;
+    opacity: 0.9;
+  }
+  
+  &::after {
+    background-color: hsl(10, 80%, 80%);
+    right: -60%;
+    top: -100%;
+  }
+  
+  &::before {
+    background-color: hsl(220, 100%, 10%);
+    right: -60%;
+    bottom: -100%;
+  }
+}
